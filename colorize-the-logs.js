@@ -17,7 +17,9 @@ function colorTheLogs() {
   console.log('🌈🌈🌈');
   [...document.querySelectorAll('.ace_line:not(.🌈)')].map(line => {
     let target = line.children[0];
-    target.innerHTML = colorize(target.innerText);
+    if (target) {
+      target.innerHTML = colorize(target.innerText);
+    }
     line.classList.add('🌈');
   });
 }
