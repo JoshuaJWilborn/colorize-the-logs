@@ -1,15 +1,7 @@
-const { colorMap, toDelete, resetChar } = window.__colorizeTheLogs;
-
+const { toDelete, resetChar, query } = window.__colorizeTheLogs;
 function colorize(htmlString) {
   let str = htmlString;
-  let changed = false;
-  for (let query in colorMap) {
-    let color = colorMap[query];
-    let old = str;
-    str = str.replace(new RegExp(query, 'g'), `<span style="color: ${color}">`);
-    if (str != old) changed = true;
-  }
-  if (changed) str = str.replace(new RegExp(resetChar, 'g'), '</span>');
+  str = str.replace(query, `<span class="🌈-$2">$3</span>`);
   toDelete.forEach(match => (str = str.replace(new RegExp(match, 'g'), '')));
   return str;
 }

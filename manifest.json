@@ -7,9 +7,10 @@
   "content_scripts": [
     {
       "matches": [
-        "https://console.aws.amazon.com/codesuite/codebuild/projects/*/build/*"
+        "https://*.console.aws.amazon.com/codesuite/codebuild/projects/*/build/*"
       ],
-      "js": ["constants.js", "colorize-the-logs.js"],
+      "js": ["src/constants.js", "src/colorize-the-logs.js"],
+      "css": ["css/styles.css"],
       "run_at": "document_start"
     }
   ]

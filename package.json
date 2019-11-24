@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pack": "zip colorize-the-logs.zip manifest.json ./src/*"
+    "pack": "npm run build && zip colorize-the-logs.zip manifest.json ./src/* ./css/*",
+    "build": "node ./scripts/generate-styles.js"
   },
   "repository": {
     "type": "git",
