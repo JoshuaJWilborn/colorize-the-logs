@@ -1,0 +1,30 @@
+{
+  "name": "colorize-the-logs",
+  "version": "0.0.3",
+  "description": "Package to recolor the AWS CodeBuild logs and remove leftover escape sequences.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "zip colorize-the-logs.zip manifest.json ./src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaJWilborn/colorize-the-logs.git"
+  },
+  "keywords": [
+    "developer",
+    "tools",
+    "AWS",
+    "AWS",
+    "CodeBuild",
+    "CodeBuild",
+    "recolor",
+    "logs"
+  ],
+  "author": "Joshua Wilborn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JoshuaJWilborn/colorize-the-logs/issues"
+  },
+  "homepage": "https://github.com/JoshuaJWilborn/colorize-the-logs#readme"
+}
