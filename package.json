@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pack": "npm run build && zip colorize-the-logs.zip manifest.json ./src/* ./css/*",
-    "build": "node ./scripts/generate-styles.js"
+    "pack": "npm run build && zip colorize-the-logs.zip manifest.json ./dist/* ./css/*",
+    "build": "npm run styles && npm run bundle",
+    "styles": "node ./scripts/generate-styles.js",
+    "lint": "tslint --fix -c tslint.json 'src/**/*.ts'",
+    "bundle": "rollup -c --environment BUILD:production"
   },
   "repository": {
     "type": "git",
@@ -16,16 +19,27 @@
     "developer",
     "tools",
     "AWS",
-    "AWS",
-    "CodeBuild",
     "CodeBuild",
     "recolor",
-    "logs"
+    "logs",
+    "escape",
+    "chars",
+    "visibility",
+    "readability",
+    "color",
+    "colorize"
   ],
   "author": "Joshua Wilborn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JoshuaJWilborn/colorize-the-logs/issues"
   },
-  "homepage": "https://github.com/JoshuaJWilborn/colorize-the-logs#readme"
+  "homepage": "https://github.com/JoshuaJWilborn/colorize-the-logs#readme",
+  "devDependencies": {
+    "rollup": "^1.27.5",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.10.0",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
+  }
 }

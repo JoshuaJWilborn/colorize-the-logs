@@ -9,7 +9,7 @@
       "matches": [
         "https://*.console.aws.amazon.com/codesuite/codebuild/projects/*/build/*"
       ],
-      "js": ["src/constants.js", "src/colorize-the-logs.js"],
+      "js": ["dist/bundle.js"],
       "css": ["css/styles.css"],
       "run_at": "document_start"
     }
