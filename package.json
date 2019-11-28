@@ -4,12 +4,12 @@
   "description": "Package to recolor the AWS CodeBuild logs and remove leftover escape sequences.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "npm run build && zip colorize-the-logs.zip manifest.json ./dist/* ./css/*",
     "build": "npm run styles && npm run bundle",
     "styles": "node ./scripts/generate-styles.js",
     "lint": "tslint --fix -c tslint.json 'src/**/*.ts'",
-    "bundle": "rollup -c --environment BUILD:production"
+    "bundle": "rollup -c --environment BUILD:production",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -36,8 +36,12 @@
   },
   "homepage": "https://github.com/JoshuaJWilborn/colorize-the-logs#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "jest": "^24.9.0",
     "rollup": "^1.27.5",
     "rollup-plugin-typescript": "^1.0.1",
+    "ts-jest": "^24.2.0",
     "tslib": "^1.10.0",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"

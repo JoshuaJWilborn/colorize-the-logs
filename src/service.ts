@@ -8,8 +8,8 @@ export function colorize(htmlString: string): string {
   return str;
 }
 export function colorTheLogs(): void {
-  debugger;
-  [...document.querySelectorAll(".ace_line:not(.🌈)")].map((line) => {
+  const lines = document.querySelectorAll(".ace_line:not(.🌈)") as any;
+  [...lines].map((line) => {
     const target = line.children[0] as HTMLElement;
     if (target) {
       target.innerHTML = colorize(target.innerText);
@@ -21,6 +21,7 @@ export function colorTheLogs(): void {
 export function startObserver(): void {
   const container = document.querySelector("awsui-tabs");
   const observer = new MutationObserver(colorTheLogs);
+  if (!container) return;
   observer.observe(container, {
     childList: true,
     subtree: true,
