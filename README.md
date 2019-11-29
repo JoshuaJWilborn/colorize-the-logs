@@ -1,5 +1,5 @@
 # colorize-the-logs
-![Build Passing State](git@github.com:JoshuaJWilborn/colorize-the-logs.git)
+[![Build Status](https://travis-ci.com/JoshuaJWilborn/colorize-the-logs.svg?branch=master)](https://travis-ci.com/JoshuaJWilborn/colorize-the-logs)
 
 Browser extension to add color back into AWS CodeBuild logs after it gets stripped out. 
 
