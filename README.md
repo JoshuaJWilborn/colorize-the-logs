@@ -1,7 +1,6 @@
 # colorize-the-logs
 [![Build Status](https://travis-ci.com/JoshuaJWilborn/colorize-the-logs.svg?branch=master)](https://travis-ci.com/JoshuaJWilborn/colorize-the-logs)
-#[![Known Vulnerabilities](https://snyk.io/test/github/joshuajwilborn/colorize-the-logs/badge.svg)](https://snyk.io/test/github/joshuajwilborn/colorize-the-log)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/JoshuaJWilborn/colorize-the-logs/badge.svg?targetFile=package.json)](https://snyk.io/test/github/JoshuaJWilborn/colorize-the-logs?targetFile=package.json)
 Browser extension to add color back into AWS CodeBuild logs after it gets stripped out. 
 
 ![Example](https://addons.cdn.mozilla.net/user-media/previews/full/228/228765.png?modified=1574869074)
