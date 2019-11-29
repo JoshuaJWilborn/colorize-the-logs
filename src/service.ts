@@ -8,8 +8,8 @@ export function colorize(htmlString: string): string {
   return str;
 }
 export function colorTheLogs(): void {
-  const lines = document.querySelectorAll(".ace_line:not(.🌈)") as any;
-  [...lines].map((line) => {
+  const lines = document.querySelectorAll(".ace_line:not(.🌈)");
+  Array.from(lines).map((line) => {
     const target = line.children[0] as HTMLElement;
     if (target) {
       target.innerHTML = colorize(target.innerText);
