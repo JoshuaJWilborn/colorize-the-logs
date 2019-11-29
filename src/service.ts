@@ -21,7 +21,7 @@ export function colorTheLogs(): void {
 export function startObserver(): void {
   const container = document.querySelector("awsui-tabs");
   const observer = new MutationObserver(colorTheLogs);
-  if (!container) return;
+  if (!container) { return; }
   observer.observe(container, {
     childList: true,
     subtree: true,
