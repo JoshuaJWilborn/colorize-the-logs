@@ -10,10 +10,11 @@ export function colorize(htmlString: string): string {
 export function colorTheLogs(): void {
   const lines = document.querySelectorAll(".ace_line:not(.🌈)");
   Array.from(lines).map((line) => {
+    line.querySelectorAll('.ace_invalid,.ace_invisible,.ace_invisible_space').forEach(e => e.remove());
     const target = line.children[0] as HTMLElement;
     if (target) {
-      target.innerHTML = colorize(target.innerText);
-    }
+      target.innerHTML = colorize(target.innerHTML);
+    }    
     line.classList.add("🌈");
   });
 }
