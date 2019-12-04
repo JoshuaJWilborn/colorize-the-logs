@@ -1,7 +1,8 @@
 import { query, toDelete } from "./constants";
 export function colorize(htmlString: string): string {
   let str = htmlString;
-  str = str.replace(query, `<span class="🌈-$2">$3</span>`);
+  str = str.replace(/((\[39m)|(\[0m))/g, '</span>');
+  str = str.replace(query, `<span class="🌈-$2">`);
   toDelete.forEach(
     (match: string) => (str = str.replace(new RegExp(match, "g"), "")),
   );
