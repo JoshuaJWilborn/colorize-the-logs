@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const styleMap = {
   "1m": "font-weight: bold",
-  
+  "3m": "font-style: italic",
   "4m": "text-decoration: underline",
   "21m": "font-weight: normal",
   "30m": "color: #000000",
