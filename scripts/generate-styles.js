@@ -49,4 +49,16 @@ let styles = Object.entries(styleMap)
   `;
   })
   .join("");
+let colors = require('./colors.json');
+styles += colors.map((item, index) => {
+  let { r, g, b } = item.rgb;
+  let rgb = `rgb(${[r,g,b].join(',')})`
+  return `
+    .🌈-bg-${index} {
+      background-color: ${rgb};
+    }
+    .🌈-fg-${index} {
+      color: ${rgb};
+    }`
+}).join("");
 fs.writeFileSync(path.join(__dirname, '../css/styles.css'), styles, 'utf-8');
