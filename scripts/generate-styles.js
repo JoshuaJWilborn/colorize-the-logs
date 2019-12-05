@@ -35,7 +35,7 @@ const styleMap = {
   "100m": "color: rgb(85,85,85)",
   "101m": "color: rgb(255,0,0)",
   "102m": "color: rgb(0,252,0)",
-  "103m": "color: rgb(255,255,0)",
+  "103m": "color: rgb(255,2255,0)",
   "104m": "color: rgb(0,0,252)",
   "105m": "color: rgb(255,0,255)",
   "106m": "color: rgb(0,255,255)",

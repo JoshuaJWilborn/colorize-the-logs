@@ -1,11 +1,10 @@
-import { query, toDelete, end } from "./constants";
+import { regexReplacementFunctionPairs } from "./constants";
 export function colorize(htmlString: string): string {
   let str = htmlString;
-  str = str.replace(end, '</span>');
-  str = str.replace(query, `<span class="🌈-$2">`);
-  toDelete.forEach(
-    (match: string) => (str = str.replace(new RegExp(match, "g"), "")),
-  );
+  for (let key in regexReplacementFunctionPairs) {
+    let [query, replacement] = regexReplacementFunctionPairs[key];
+    str = str.replace(query, replacement);
+  } 
   return str;
 }
 export function colorTheLogs(): void {
