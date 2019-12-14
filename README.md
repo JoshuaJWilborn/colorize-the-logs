@@ -12,3 +12,10 @@ Browser extension to add color back into AWS CodeBuild logs after it gets stripp
 
 [Firefox Store](https://addons.mozilla.org/en-US/firefox/addon/colorize-the-logs/)
 
+Build instructions:
+
+`npm install`
+
+`npm run pack`
+
+Then you can sideload it with `colorize-the-logs.zip` file that is created.
