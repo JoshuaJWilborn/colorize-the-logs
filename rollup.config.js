@@ -1,12 +1,24 @@
-const rollupTypescript = require('rollup-plugin-typescript');
-export default {
-    input: 'src/index.ts',
+const rollupTypescript = require("rollup-plugin-typescript");
+const rollupCommonjs = require("rollup-plugin-commonjs");
+const builtins = require("rollup-plugin-node-builtins");
+const nodeResolve = require("rollup-plugin-node-resolve");
+export default [
+  {
+    input: "src/bundle.ts",
+    output: { file: "dist/bundle.js", format: "iife" },
     plugins: [
-          rollupTypescript()  
-        ],
-    output: {
-          file: 'dist/bundle.js',
-          format: 'iife'
-        } 
-}
-
+      rollupTypescript(),
+      nodeResolve({browser: true}),
+      rollupCommonjs()
+    ]
+  },
+  {
+    input: "src/background.ts",
+    output: { file: "dist/background.js", format: "iife" },
+    plugins: [
+      rollupTypescript(),
+      nodeResolve({browser: true}),
+      rollupCommonjs()
+    ]
+  }
+];

@@ -1,9 +1,12 @@
 {
-  "name": "Colorize The Logs",
+  "name": "AWS CodeBuild Logs Colorizer [Unofficial]",
   "author": "Joshua Wilborn",
-  "version": "0.8",
+  "version": "0.9",
   "manifest_version": 2,
   "description": "Re-add terminal colors to AWS CodeBuild Logs and delete control characters.",
+  "background": {
+    "scripts": ["dist/background.js"]
+  },
   "content_scripts": [
     {
       "matches": [
@@ -14,5 +17,8 @@
       "run_at": "document_start"
     }
   ],
-  "icons": {"128": "assets/logo.png"} 
+  "icons": {"128": "assets/logo.png"} ,
+  "browser_action":  {
+    "default_icon": "assets/logo.png"
+  }
 }

@@ -1,3 +1,6 @@
+jest.mock('webextension-polyfill', () => {
+  return {default: {runtime: {onMessage: {addListener: ()=>{}}}}
+})
 import { colorize, colorTheLogs } from '../src/service';
 test('test runs', () => {
   expect(true).toBe(true);
