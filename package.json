@@ -4,7 +4,9 @@
   "description": "Package to recolor the AWS CodeBuild logs and remove leftover escape sequences.",
   "main": "index.js",
   "scripts": {
-    "pack": "rm colorize-the-logs.zip;npm run build && zip -0 colorize-the-logs.zip manifest.json ./dist/* ./css/* ./assets/logo.png",
+    "pack": "rm colorize-the-logs.zip;npm run build && npm run zip",
+    "zip": "zip -0 colorize-the-logs.zip manifest.json ./dist/* ./css/* ./assets/logo.png",
+    "zip:source": "zip -9 colorize-the-logs.source.zip ./**/* -x 'dist/**' -x colorize-the-logs.zip -x 'node_modules/**'",
     "build": "npm run styles && npm run bundle",
     "styles": "node ./scripts/generate-styles.js",
     "lint": "tslint --fix -c tslint.json 'src/**/*.ts'",
