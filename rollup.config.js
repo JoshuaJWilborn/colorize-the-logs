@@ -1,6 +1,5 @@
 const rollupTypescript = require("rollup-plugin-typescript");
 const rollupCommonjs = require("rollup-plugin-commonjs");
-const builtins = require("rollup-plugin-node-builtins");
 const nodeResolve = require("rollup-plugin-node-resolve");
 export default [
   {
