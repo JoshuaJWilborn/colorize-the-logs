@@ -1,2 +1,2 @@
-import { startObserver, watchForContainer } from "./service";
-watchForContainer().then(() => startObserver());
+import { watchForContainer } from "./service";
+watchForContainer();

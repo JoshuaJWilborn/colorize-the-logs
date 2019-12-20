@@ -10,7 +10,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.console.aws.amazon.com/codesuite/codebuild/projects/*/build/*"
+        "https://*.console.aws.amazon.com/codesuite/*"
       ],
       "js": ["dist/bundle.js"],
       "css": ["css/styles.css"],

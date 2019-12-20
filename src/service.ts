@@ -33,10 +33,6 @@ function getRestoreFunc(line: HTMLElement): Function {
     line.innerHTML = old;
   })(line.innerHTML);
 }
-export function restore(): void {
-  paused = !paused;
-  document.querySelectorAll(".🌈").forEach(el => el.restore());
-}
 export function startObserver(): void {
   const container = document.querySelector("awsui-tabs");
   const observer = new MutationObserver(colorTheLogs);
@@ -50,14 +46,18 @@ export function startObserver(): void {
   colorTheLogs();
 }
 
-let watchInterval: NodeJS.Timeout;
+export function restore(): void {
+  paused = !paused;
+  document.querySelectorAll(".🌈").forEach(el => el.restore());
+}
+let old;
 export function watchForContainer() {
-  clearInterval(watchInterval);
   return new Promise(resolve => {
-    watchInterval = setInterval(() => {
-      if (document.querySelector("awsui-tabs")) {
-        clearInterval(watchInterval);
-        resolve();
+    setInterval(() => {
+      let el = document.querySelector("awsui-tabs")	     
+      if (old !== el) {
+        old = el;
+        startObserver();
       }
     }, 50);
   });
