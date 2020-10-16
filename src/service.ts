@@ -20,10 +20,7 @@ export function colorTheLogs(): void {
     line
       .querySelectorAll(".ace_invalid,.ace_invisible,.ace_invisible_space")
       .forEach(e => e.remove());
-    const target = line.children[0] as HTMLElement;
-    if (target) {
-      target.innerHTML = colorize(target.innerHTML);
-    }
+    line.innerHTML = colorize(line);
     line.classList.add("🌈");
   });
 }
