@@ -20,7 +20,7 @@ export function colorTheLogs(): void {
     line
       .querySelectorAll(".ace_invalid,.ace_invisible,.ace_invisible_space")
       .forEach(e => e.remove());
-    line.innerHTML = colorize(line);
+    line.innerHTML = colorize(line.innerHTML);
     line.classList.add("🌈");
   });
 }
